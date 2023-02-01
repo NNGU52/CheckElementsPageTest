@@ -11,32 +11,27 @@ using OpenQA.Selenium.Interactions;
 
 namespace CheckElementsPageTest
 {
-    class BaseClass
+    public class BaseClass
     {
-        protected IWebDriver driver;
+        public static IWebDriver driver;
 
         [OneTimeSetUp]
-        protected void DoBeforeAllTheTests()
+        public void DoBeforeAllTheTests()
         {
-            
-        }
-
-        [OneTimeTearDown]
-        protected void DoAfterAllTheTests()
-        {
-            
+            driver = new OpenQA.Selenium.Chrome.ChromeDriver();
         }
 
         [SetUp]
         protected void DoBeforeEach()
         {
-
+            driver.Navigate().GoToUrl(TestSettings.HostPrefix);
+            driver.Manage().Window.Maximize();
         }
 
         [TearDown]
         protected void DoAfterEach()
         {
-            
+          driver.Quit();
         }
 
     }

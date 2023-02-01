@@ -6,17 +6,17 @@ using System;
 
 namespace CheckElementsPageTest
 {
-    public class Tests
+    [TestFixture]
+    public class Tests : BaseClass
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            MainMenuPageObject mainMenu = new MainMenuPageObject(driver);
+
+            mainMenu.WaitElement(mainMenu._rentButton);
+            mainMenu.ClickOneElementOfSort(NameSorts.ByBusinessSort);
+            mainMenu.WaitElement(mainMenu._newPageBy);
         }
     }
 }

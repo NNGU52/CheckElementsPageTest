@@ -9,6 +9,6 @@ namespace CheckElementsPageTest
     // прописываем тестовые настройки
     public class TestSettings
     {
-        public static string HostPrefix = "https://market.yandex.ru";
+        public static string HostPrefix = "https://www.timeout.ru/msk";
     }
 }
